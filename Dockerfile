@@ -10,9 +10,11 @@ RUN cd /home \
     && ssh-keygen -q -t rsa -b 2048 -f /etc/ssh/ssh_host_rsa_key -N '' \
     && ssh-keygen -q -t ecdsa -f /etc/ssh/ssh_host_ecdsa_key -N '' \
     && ssh-keygen -t dsa -f /etc/ssh/ssh_host_ed25519_key -N '' \
+    && yum -y install gcc \
+    && yum -y install gcc-c++ \
+    && yum -y install gdb-gdbserver \
     && yum clean all \
-    && rm -rf /var/cache/yum \
-    && rm -rf ~/.cache/pip/*
+    && rm -rf /var/cache/yum
 
 WORKDIR /home
 
