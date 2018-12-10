@@ -13,6 +13,7 @@ RUN cd /home \
     && yum -y install gcc \
     && yum -y install gcc-c++ \
     && yum -y install gdb-gdbserver \
+    && yum -y groupinstall development \
     && yum clean all \
     && rm -rf /var/cache/yum
 
